@@ -58,10 +58,17 @@ Container Data Hub acts as a trusted central source of truth for import release 
 
 ## Initial Laravel Setup
 
-Run these commands locally after cloning this repository:
+This repository already contains project documentation. Create Laravel in a temporary folder and then copy the generated Laravel files into this repository.
 
 ```bash
-composer create-project laravel/laravel .
+git clone https://github.com/harshanarw/container_data_hub_codex.git
+composer create-project laravel/laravel container_data_hub_laravel
+```
+
+After copying the Laravel files into this repository, run:
+
+```bash
+cd container_data_hub_codex
 cp .env.example .env
 php artisan key:generate
 ```
@@ -69,6 +76,8 @@ php artisan key:generate
 Configure MySQL in `.env`:
 
 ```env
+APP_NAME="Container Data Hub"
+APP_TIMEZONE=Asia/Colombo
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
